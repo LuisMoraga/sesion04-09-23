@@ -2,31 +2,36 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //Estructura switch
-        //Se usa una -> en lugar del :
-        //Para no necesitar poner la setencia break;
-        Scanner lector = new Scanner(System.in);
-        System.out.println("Color del semaforo: (r/a/v) ");
-        char color = lector.next().charAt(0);
+        //Ciclo while
+        //Variable de control
+        //while (/*2.Expresion logica */); {
+            //3.Acrtualizar valor de la variable de control
+        //}
+        //Ciclo do...while
+        //1.Variable de control
+        //do{
+            //2.Actualizar valor de la variable de control
+        //} while (/*3.Expresion logica */);
+           //Ciclo For
+           //En este caso, siempre se conoce la cantidad de 
+           //iteraciones o repeticiones.
+           //1.Variable de control;expresion logica;actualizacion de la variable de control
+           Scanner lector = new Scanner(System.in);
+           System.out.println("Hasta que tabla de multiplicar: ");
+           byte table = lector.nextByte();
 
-        switch (color) {
-         
-           case 'r' ->{
-                System.out.println("El semaforo esta en rojo. ");
+           while (table>50){
+              System.out.println("Valor demasiado alto.");
+              System.out.println("Hasta que tabla de multiplicar: ");
+              table=lector.nextByte();
+
            }
-
-           case 'a' ->{
-                System.out.println("El semaforo esta en amarillo. ");
-           }
-
-           case 'v' ->{
-                System.out.println("El semaforo esta en verde. ");
-           }
-
-           default ->{
-
-           }
-             
-        }
+           for (int j = 1; j <= table; j++) { //Es para pasar de una tabla a otra
+                 for (int i = 1; i <= 12; i++){
+                      System.out.println(j +"x" + i + " = " + j*i);
+            }
+            System.out.println("::::::::::::");
+         }
+            lector.close();   
     }
 }
